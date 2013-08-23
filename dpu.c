@@ -7,13 +7,13 @@ int main (int argc, char **argv){
 	FILE *bob,*joe,*moe;
 	int thing, factor, arg;
 	if(argc >= 3){
-        char *end_char;
+		char *end_char;
 		factor = strtol(argv[1], &end_char, 0);
-        if(!*(argv[1]) || *end_char)
-        {
-            fputs("I can haz number?\n", stderr);
-            return EXIT_FAILURE;
-        }
+		if(!*(argv[1]) || *end_char)
+		{
+			fputs("I can haz number?\n", stderr);
+			return EXIT_FAILURE;
+		}
 		arg = 2;
 	}else{
 		factor = 9;
