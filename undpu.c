@@ -3,18 +3,20 @@
 #include <stdio.h>
 #include <string.h>
 
+const char compare_string[] = "DOUBLEPLUS UNZIP, FACTOR=";
+
 int main (int argc, char **argv){
 	FILE *bob, *joe;
-	int factor, thing;
+	int factor, thing, i;
 	char output[FILENAME_MAX];
 	if((bob = fopen(argv[1],"r"))==NULL){
 		fputs("That's no input file, THAT'S A SPACE STATION!\n",stderr);
 		return EXIT_FAILURE;
 	}
-	while(thing != '='){
-		thing=fgetc(bob);
-		if(thing==EOF){
-			fputs("You suck!  That's not a DPU file!\n",stderr);
+	for(i = 0; compare_string[i]; i++) {
+		thing = fgetc(bob);
+		if(thing != compare_string[i]) {
+			fputs("You suck!  That's not a DPU file!\n", stderr);
 			return EXIT_FAILURE;
 		}
 	}
