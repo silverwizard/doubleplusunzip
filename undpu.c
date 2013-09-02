@@ -13,6 +13,11 @@ int main (int argc, char **argv){
 		fputs("I pity the fool who don't have an input file!\n",stderr);
 		return EXIT_FAILURE;
 	}
+	if(strlen(argv[1]) <= 4 || strcmp(argv[1] + strlen(argv[1]) - 4, ".dpu"))
+	{
+		fputs("Where's the rest of the filename?", stderr);
+		return EXIT_FAILURE;
+	}
 	if((bob = fopen(argv[1],"r"))==NULL){
 		fputs("That's no input file, THAT'S A SPACE STATION!\n",stderr);
 		return EXIT_FAILURE;
