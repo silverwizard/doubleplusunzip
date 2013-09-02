@@ -15,7 +15,7 @@ int main (int argc, char **argv){
 	}
 	if(strlen(argv[1]) <= 4 || strcmp(argv[1] + strlen(argv[1]) - 4, ".dpu"))
 	{
-		fputs("Where's the rest of the filename?", stderr);
+		fputs("Where's the rest of the filename?\n", stderr);
 		return EXIT_FAILURE;
 	}
 	if((bob = fopen(argv[1],"r"))==NULL){
