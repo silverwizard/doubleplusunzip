@@ -4,7 +4,6 @@
 #include <string.h>
 
 int main (int argc, char **argv){
-	char name[FILENAME_MAX];
 	FILE *bob, *joe;
 	int factor, thing;
 	char output[FILENAME_MAX];
@@ -43,4 +42,5 @@ int main (int argc, char **argv){
 			thing = fgetc(bob);
 		}
 	}
+	return 0;
 }
