@@ -9,6 +9,10 @@ int main (int argc, char **argv){
 	FILE *bob, *joe;
 	int factor, thing, i;
 	char output[FILENAME_MAX];
+	if(argc < 2){
+		fputs("I pity the fool who don't have an input file!\n",stderr);
+		return EXIT_FAILURE;
+	}
 	if((bob = fopen(argv[1],"r"))==NULL){
 		fputs("That's no input file, THAT'S A SPACE STATION!\n",stderr);
 		return EXIT_FAILURE;
