@@ -23,6 +23,11 @@ int main (int argc, char **argv){
 		fputs("I pity the fool who don't have an input file!\n",stderr);
 		return EXIT_FAILURE;
 	}
+	if(strlen(argv[arg]) >= FILENAME_MAX - 4)
+	{
+		fputs("It's a filename, not a novel.\n", stderr);
+		return EXIT_FAILURE;
+	}
 	strcpy(name,argv[arg]);
 	strcat(name,".dpu");	
 	if((bob = fopen(argv[arg],"r"))==NULL){
