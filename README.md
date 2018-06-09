@@ -9,7 +9,7 @@ To build:
 OR if you want to *install* it you can run:
 `make install`
 
-My further work will to be to properly use getopt (like not a chump), and also to create a proper useage()
+My further work will to be to properly use getopt (like not a chump), and also to create a proper usage()
 
 Right now, just use:
 `dpu [decompression size] filename`
