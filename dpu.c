@@ -28,8 +28,8 @@ int main (int argc, char **argv){
 		fputs("It's a filename, not a novel.\n", stderr);
 		return EXIT_FAILURE;
 	}
-	strcpy(name,argv[arg]);
-	strcat(name,".dpu");	
+	strlcpy(name,argv[arg],sizeof(name));
+	strlcat(name,".dpu",sizeof(name));	
 	if((bob = fopen(argv[arg],"r"))==NULL){
 		fputs("NO YOU FOOL, A REAL ONE!\n",stderr);
 		return EXIT_FAILURE;
